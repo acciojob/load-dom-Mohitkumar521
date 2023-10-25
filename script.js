@@ -1,17 +1,18 @@
-//your JS code here. If required.
-    // Function to write "DOM load success" to the empty body tag
-        function writeSuccessMessage() {
+   function verifyDOMLoaded() {
+            console.log("1) Loads DOM content successfully");
+        }
+
+        // Function to verify that the body element is empty
+        function verifyEmptyBody() {
             const body = document.body;
 
-            // Check if the body is empty
             if (body.childNodes.length === 0) {
-                // Create a text node containing the message
-                const textNode = document.createTextNode("DOM load success");
-
-                // Append the text node to the body
-                body.appendChild(textNode);
+                console.log("2) Verifies that the body element is empty");
             }
         }
 
-        // Add an event listener to detect when the DOM is loaded
-        document.addEventListener("DOMContentLoaded", writeSuccessMessage);
+        // Add an event listener for DOMContentLoaded
+        document.addEventListener("DOMContentLoaded", function() {
+            verifyDOMLoaded();
+            verifyEmptyBody();
+        });
